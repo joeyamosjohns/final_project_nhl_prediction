@@ -25,9 +25,13 @@ from data_bet_add_game_id import mp_to_bet_add_game_id, game_to_bet_add_game_id
 
 ##file paths
 
-Kaggle_path = "/Users/joejohns/data_bootcamp/Final_Project_NHL_prediction/Data/Kaggle_Data_Ellis/"
-mp_path = "/Users/joejohns/data_bootcamp/Final_Project_NHL_prediction/Data/Money_Puck_Data/"
-betting_path = "/Users/joejohns/data_bootcamp/Final_Project_NHL_prediction/Data/Betting_Data/"
+Kaggle_path = "/Users/joejohns/data_bootcamp/GitHub/final_project_nhl_prediction/Data/Kaggle_Data_Ellis/"
+mp_path = "/Users/joejohns/data_bootcamp/GitHub/final_project_nhl_prediction/Data/Money_Puck_Data/"
+betting_path = "/Users/joejohns/data_bootcamp/GitHub/final_project_nhl_prediction/Data/Betting_Data/"
+
+#Kaggle_path = "/Users/joejohns/data_bootcamp/Final_Project_NHL_prediction/Data/Kaggle_Data_Ellis/"
+#mp_path = "/Users/joejohns/data_bootcamp/Final_Project_NHL_prediction/Data/Money_Puck_Data/"
+#betting_path = "/Users/joejohns/data_bootcamp/Final_Project_NHL_prediction/Data/Betting_Data/"
 
 ##Kaggle files
 
