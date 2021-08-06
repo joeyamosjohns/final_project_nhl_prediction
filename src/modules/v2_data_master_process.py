@@ -210,6 +210,11 @@ df_mp_teams = df_mp_teams.loc[df_mp_teams['game_id'].isin(common_game_ids), :].c
 
 X_merge = pd.merge(df_betting, df_game_team_stats, on = ['game_id', 'nhl_name'], how = 'inner', suffixes = ('_bet', '_gm_stats'))
 X_merge2 = pd.merge(X_merge, df_mp_teams, on = ['game_id', 'nhl_name', 'mp_date', 'season'], how = 'inner', suffixes = ('_merge', '_mp_teams'))
+##season and mp_date are not features of df_game_team_stats
+##there are ~100 discrepencies as far as HoA labelling so I have not merged on that; one should 
+##us df_game_team_stats as the arbitor of H/A 
+##note: most of the errors are from df_mp labelling both games "away"
+##there are only around 10 where bet and df_game disagree; hockey ref showed bet is wrong (20200117)
 
 #check for loss of rows:
 print(2*len(common_game_ids), X_merge2.shape[0])
@@ -217,5 +222,10 @@ print(2*len(common_game_ids), X_merge2.shape[0])
 #data_bet_stats_mp = X_merge2.copy()
 #data_bet_stats_mp.to_csv(path + "Data/Shaped_Data/")
 
-data_bet_stats_mp1 = X_merge2.copy()
-data_bet_stats_mp1.to_csv('data_bet_stats_mp2.csv')
+data = X_merge2.copy()
+
+from data_features import feat_drop, feat_rename
+data.drop(columns=feat_drop, inplace=True)
+data.rename(columns=feat_rename, inplace = True)
+data.reset_index(drop = True, inplace = True)
+data.to_csv('data_bet_stats_mp.csv')

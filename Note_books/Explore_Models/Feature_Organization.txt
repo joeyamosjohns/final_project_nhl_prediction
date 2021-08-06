@@ -1,0 +1,236 @@
+drop:
+
+HoA',   #this is mp
+'HoA_bet',
+'VH',
+
+'home_or_away',
+'team',
+'name',
+'Team',
+'Unnamed: 0',
+'playerTeam',
+ 'position',
+'blocked',  ## Same as bSAAgainst
+'pim', ## same as penaltyminFor
+'goals',  ##goalsFor
+ 'shots',
+ 'giveaways',
+
+######################
+Keep: 
+
+##targets
+
+
+#betting odds
+ 'Open', 
+ 
+ ##can be used to measure betting profits in betting algo
+ ##can be used as a basic predictor of the outcome as it is known before hand ... I think I will not 
+ ##use it though except as a tough base-line 
+ ##Can see how it boosts algos at the end ... ? I want to find predictions *different* than bet to 
+ ###exploit betting odds tho!
+         
+#goal differential
+ 'goalsAgainst',
+ 'goalsFor',
+
+#win/loss reg/ot/so
+'won',
+ 'settled_in',
+'iceTime',  #alt. indicator of reg/OT/SO
+
+
+####dependent variables 
+
+#game_id stuff
+
+'game_id',
+'season',
+'Date',  #useful for service searches >900 etc
+'mp_date',
+'playoffGame', # 0 or 1
+
+#team stuff
+
+'team_id', #may be useful for joins later 
+'nhl_name',
+'head_coach', #possibly import rank of coaches here
+
+#H/A and opponent
+
+'HoA_gm_stats',
+'opposingTeam',  #need to apply mp_fix_name
+
+#basic stats_parameter (can mult them all by 5)
+'situation',  ##5v5, 5v4, all ... [we have just all for now]
+
+##key stats
+ 
+ 
+'corsiPercentage',
+'fenwickPercentage',
+ 
+ 'xGoalsAgainst',
+ 'xGoalsFor',
+ 
+ 
+ 'xGoalsPercentage', #derived from above two
+ 
+ 
+ 
+
+'faceOffWinPercentage',
+ 
+ 'faceOffsWonAgainst',
+ 'faceOffsWonFor',
+ 
+ 'giveawaysAgainst',
+ 'giveawaysFor',
+ 
+ 'dZoneGiveawaysAgainst',
+ 'dZoneGiveawaysFor',
+
+
+#flurry is when several high danger shots occur in a row due to rebounds ... 
+#but total prob may exceed 1 so ... should be adjusted
+
+'flurryAdjustedxGoalsAgainst',
+'flurryAdjustedxGoalsFor',
+'flurryScoreVenueAdjustedxGoalsAgainst',
+'flurryScoreVenueAdjustedxGoalsFor',
+
+#special teams, num_penalties for/against
+ 'powerPlayGoals',
+ 'powerPlayOpportunities',
+ 'penalityMinutesAgainst',
+ 'penalityMinutesFor',
+ 'penaltiesAgainst',
+ 'penaltiesFor',
+
+ 
+ #hits
+ 
+ 
+
+ ##xhitsFor (jk ) ... Nylander would have a brutal hitsFor - xhitsFor
+ 
+
+#these are sort of defensive stats (or how bad you get shut down)
+
+'blockedShotAttemptsAgainst',
+'blockedShotAttemptsFor',
+ 'missedShotsAgainst',
+'missedShotsFor',
+
+'freezeAgainst',  # "freeze after shot attempt For/Against"
+'freezeFor',
+
+
+'playStoppedAgainst',
+ 'playStoppedFor',   #non-freeze reason
+
+ 'playContinuedInZoneAgainst',  #after a shot is next shot in zone (no events outside+ same players on ice)
+ 'playContinuedInZoneFor',
+  
+ 'playContinuedOutsideZoneAgainst',
+ 'playContinuedOutsideZoneFor',
+ 
+ 'xFreezeAgainst',
+'xFreezeFor',
+ 
+
+'xPlayStoppedAgainst',
+ 'xPlayStoppedFor',
+
+ 'xPlayContinuedInZoneAgainst',   ##maybe do PCIZA and PCIZA - xPCIZA (measures lucky/unlucky)
+ 'xPlayContinuedInZoneFor',
+ 
+'xPlayStoppedAgainst',
+ 'xPlayStoppedFor',
+
+ 
+ 
+ 
+ 'highDangerShotsAgainst',
+ 'highDangerShotsFor',
+ 
+ 'mediumDangerShotsAgainst',
+ 'mediumDangerShotsFor',
+ 
+ 'lowDangerShotsAgainst',
+ 'lowDangerShotsFor',
+ 
+ 
+ 
+ 
+ 'highDangerGoalsAgainst',
+ 'highDangerGoalsFor',
+ 'mediumDangerGoalsAgainst',
+ 'mediumDangerGoalsFor',
+ 'lowDangerGoalsAgainst',
+ 'lowDangerGoalsFor',
+ 
+ 
+ 'highDangerxGoalsAgainst',
+ 'highDangerxGoalsFor',
+'mediumDangerxGoalsAgainst',
+ 'mediumDangerxGoalsFor',
+ 'lowDangerxGoalsAgainst',
+ 'lowDangerxGoalsFor',
+
+ 'xGoalsFromActualReboundsOfShotsAgainst',
+ 'xGoalsFromActualReboundsOfShotsFor',
+ 'xGoalsFromxReboundsOfShotsAgainst',
+ 'xGoalsFromxReboundsOfShotsFor',
+ 
+ 
+ 
+ 'reboundGoalsAgainst',
+ 'reboundGoalsFor',
+ 'reboundsAgainst',
+ 'reboundsFor',
+ 'reboundxGoalsAgainst',
+ 'reboundxGoalsFor',
+ 'xReboundsAgainst',
+ 'xReboundsFor'
+ 
+ 
+ 
+ 'savedShotsOnGoalAgainst',
+ 'savedShotsOnGoalFor',
+'savedUnblockedShotAttemptsAgainst',  ##mised shots plus saved SOG
+ 'savedUnblockedShotAttemptsFor',
+ 
+ 'scoreAdjustedShotsAttemptsAgainst',
+ 'scoreAdjustedShotsAttemptsFor',
+ 'scoreAdjustedTotalShotCreditAgainst',
+ 'scoreAdjustedTotalShotCreditFor',
+ 'scoreAdjustedUnblockedShotAttemptsAgainst',
+ 'scoreAdjustedUnblockedShotAttemptsFor',
+ 
+ 'scoreFlurryAdjustedTotalShotCreditAgainst',
+ 'scoreFlurryAdjustedTotalShotCreditFor',
+ 
+
+
+ 'shotAttemptsAgainst',
+ 'shotAttemptsFor',
+'totalShotCreditAgainst',
+ 'totalShotCreditFor',
+ 
+ 
+ 'scoreVenueAdjustedxGoalsAgainst',
+ 'scoreVenueAdjustedxGoalsFor',
+
+ 'shotsOnGoalAgainst',
+ 'shotsOnGoalFor',
+ 'xOnGoalAgainst',  #unblocked ... measures how muchthey miss the net (above or below this avg)
+ 'xOnGoalFor',
+ 
+ 'unblockedShotAttemptsAgainst',
+ 'unblockedShotAttemptsFor',
+ 
+ 
+ 
